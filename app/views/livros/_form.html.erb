@@ -22,13 +22,18 @@
   </div>
 
   <div class="field">
+    <%= form.label :imagem %>
+    <%= form.file_field :imagem %>
+  </div>
+
+  <div class="field">
     <%= form.label :sinopse %>
     <%= form.text_area :sinopse %>
   </div>
 
-  <div class="field">
+  <div class="field"> 
     <%= form.label :publicado %>
-    <%= form.date_select :publicado %>
+    <%= form.date_select :publicado, :start_year => 1455, :end_year => Time.now.year + 10 %>
   </div>
 
   <div class="field">
