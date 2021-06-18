@@ -36,10 +36,7 @@
     <%= form.date_select :publicado, :start_year => 1455, :end_year => Time.now.year + 10 %>
   </div>
 
-  <div class="field">
-    <%= form.label :user_id %>
-    <%= form.text_field :user_id %>
-  </div>
+  <%= form.hidden_field :user_id %>
 
   <div class="actions">
     <%= form.submit %>

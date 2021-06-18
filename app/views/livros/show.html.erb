@@ -29,5 +29,30 @@
   <%= @livro.user_id %>
 </p>
 
-<%= link_to 'Edit', edit_livro_path(@livro) %> |
+<% if @livro.user == current_user %>
+  <%= link_to 'Edit', edit_livro_path(@livro) %> |
+<% end %>
 <%= link_to 'Back', livros_path %>
+  
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Conteudo</th>
+    </tr>
+  </thead>
+  
+  <tbody>
+    <% @comentarios.each do |comentario| %>
+      <tr>
+        <td><%= comentario.user.email %></td>
+        <td><%= comentario.conteudo %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+  
+<% if user_signed_in? %>
+  <%# o link do novo comentário é passado com um parâmetro que leva o id do livro a ser comentado %>
+  <%= link_to 'New Comentario', new_comentario_path(livro_id: @livro.id)%> 
+<% end %>

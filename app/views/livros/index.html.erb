@@ -23,13 +23,17 @@
         <td><%= livro.publicado %></td>
         <td><%= livro.user_id %></td>
         <td><%= link_to 'Show', livro %></td>
-        <td><%= link_to 'Edit', edit_livro_path(livro) %></td>
-        <td><%= link_to 'Destroy', livro, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% if livro.user == current_user %>
+          <td><%= link_to 'Edit', edit_livro_path(livro) %></td>
+          <td><%= link_to 'Destroy', livro, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
 </table>
-
+  
 <br>
-
-<%= link_to 'New Livro', new_livro_path %>
+  
+<% if user_signed_in? %>
+  <%= link_to 'New Livro', new_livro_path %>
+<% end %>

@@ -8,12 +8,14 @@ class LivrosController < ApplicationController
 
   # GET /livros/1 or /livros/1.json
   def show
+    @comentarios = Comentario.all.where(livro: params[:id])
   end
+  
 
   # GET /livros/new
   def new
-    @livro = Livro.new
-  end
+    @livro = current_user.livros.new
+  end  
 
   # GET /livros/1/edit
   def edit
