@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'pages/home'
   resources :comentarios
   resources :livros
   devise_for :users
