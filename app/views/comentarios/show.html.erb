@@ -7,13 +7,12 @@
 
 <p>
   <strong>User:</strong>
-  <%= @comentario.user_id %>
+  <%= @comentario.user.email %>
 </p>
 
 <p>
   <strong>Livro:</strong>
-  <%= @comentario.livro_id %>
+  <%= @comentario.livro.titulo %>
 </p>
 
-<%= link_to 'Edit', edit_comentario_path(@comentario) %> |
-<%= link_to 'Back', comentarios_path %>
+<%= link_to 'Back', livros_path %>
