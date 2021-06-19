@@ -1,24 +1,12 @@
-# README
+# BookStore em Ruby on Rails
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Esse é um projeto de um site simples de catálogos de livros (ainda não é uma "loja") que estou usando para aprender e praticar **Ruby on Rails** e todos os conceitos de desenvolvimento web que vêm com ele como CRUD, banco de dados, modelo MVC, etc. Além de estar usando Bootstrap para facilitar e agilizar a estilização da página.
 
-Things you may want to cover:
+## Como testar o site no seu Computador
+Tendo instalado todas as ferramentas necessárias para rodar o Ruby on Rails, é só ter a versão 2.7.3, clonar o repositório para o seu computador e executar os seguintes comandos pelo cmd no diretório baixado.
 
-* Ruby version
+`bundle install`
+`rails db:migrate`
+`rails server`
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Abra o seu navegador e acesse o link *localhost:3000* e teste a vontade, sinta-se livre para enviar sugestõese ou pull requests!
