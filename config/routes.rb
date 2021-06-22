@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   root 'pages#home'
+  get 'pages/contato'
+
   resources :comentarios
   resources :livros
   devise_for :users
