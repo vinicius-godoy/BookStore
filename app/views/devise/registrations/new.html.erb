@@ -12,6 +12,34 @@
   <br/>
 
   <div class="field">
+    <%= f.label :first_name, "Nome" %><br />
+    <%= f.text_field :first_name, autofocus: true, autocomplete: "first_name", class:"form-control" %>
+  </div>
+
+  <br/>
+
+  <div class="field">
+    <%= f.label :last_name, "Sobrenome" %><br />
+    <%= f.text_field :last_name, autofocus: true, autocomplete: "last_name", class:"form-control" %>
+  </div>
+
+  <br/>
+
+  <div class="field">
+    <%= f.label :username, "Username" %><br />
+    <%= f.text_field :username, autofocus: true, autocomplete: "username", class:"form-control" %>
+  </div>
+
+  <br/>
+
+  <div class="field">
+    <%= f.label :image, "Foto de Perfil" %><br />
+    <%= f.file_field :image, autofocus: true, autocomplete: "image", class:"form-control" %>
+  </div>
+
+  <br/>
+
+  <div class="field">
     <%= f.label :password, "Senha" %>
     <% if @minimum_password_length %>
     <em>(Mínimo de <%= @minimum_password_length %> caracteres)</em>
