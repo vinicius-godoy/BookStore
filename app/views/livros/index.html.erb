@@ -1,39 +1,27 @@
-<p id="notice"><%= notice %></p>
-
 <h1>Livros</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Titulo</th>
-      <th>Autor</th>
-      <th>Sinopse</th>
-      <th>Publicado</th>
-      <th>User</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @livros.each do |livro| %>
-      <tr>
-        <td><%= livro.titulo %></td>
-        <td><%= livro.autor %></td>
-        <td><%= livro.sinopse %></td>
-        <td><%= livro.publicado %></td>
-        <td><%= livro.user_id %></td>
-        <td><%= link_to 'Show', livro %></td>
-        <% if livro.user == current_user %>
-          <td><%= link_to 'Edit', edit_livro_path(livro) %></td>
-          <td><%= link_to 'Destroy', livro, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <% end %>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-  
-<br>
-  
 <% if user_signed_in? %>
-  <%= link_to 'New Livro', new_livro_path %>
+  <%= link_to "Cadastrar um novo livro", new_livro_path, class:"btn btn-primary"%>
 <% end %>
+
+<hr>
+
+<div class="grid">
+  <% @livros.each do |livro| %>
+    <div class="card">
+      <center><h5 class="card-header"><%= livro.titulo %></h5></center>
+      <%= image_tag(livro.imagem, class:"card-img-top") %>
+      <center><h6 style="margin-top: 10px">@<%= livro.user.username %></h6></center>
+      <div class="card-body">
+        <h5 class="card-title"><%= livro.autor %></h5>
+        <h6 class="card-subtitle mb-2 text-muted">Publicado em: <td><%= livro.publicado.strftime("%d/%m/%y") %></td></h6>
+        <p class="card-text"><%= livro.sinopse %></p>
+        <% if livro.user == current_user %>
+          <td><%= link_to 'Editar', edit_livro_path(livro), class:"btn btn-success" %></td>
+          <td><%= link_to 'Deletar', livro, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-danger" %></td>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+</div>
+</div>
